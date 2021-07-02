@@ -1,6 +1,6 @@
 # 侍道 -samuraidou-
 
-## サイト概要 
+## サイト概要
 戦国時代に建てられた城や城跡・古戦場跡地専用のレビューサイト。
 戦国時代について知識がない人にも楽しんでもらえるように、
 アニメーションと簡単なイラストで有名武将の生き様を学べます。
@@ -25,7 +25,7 @@
 いたんだと実感をしてもらい、城・古戦場巡りをさらに楽しんで欲しいです。
 
 ## 設計書
-作成中
+UI Flows: https://docs.google.com/spreadsheets/d/1okkqrCvtCkX3liqhvLJ3byr0whOM4wCYug15mR9tKus/edit#gid=0
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1qtckL4ddUpqgRyQqB5VzeDydj5WJ-Kqi2FAqFeN1BG4/edit#gid=0
