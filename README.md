@@ -25,11 +25,13 @@
 いたんだと実感をしてもらい、城・古戦場巡りをさらに楽しんで欲しいです。
 
 ## 設計書
-UI Flows: https://docs.google.com/spreadsheets/d/1okkqrCvtCkX3liqhvLJ3byr0whOM4wCYug15mR9tKus/edit#gid=0
+[UI Flows](https://docs.google.com/spreadsheets/d/1okkqrCvtCkX3liqhvLJ3byr0whOM4wCYug15mR9tKus/edit#gid=0)
 
-ER図: https://docs.google.com/spreadsheets/d/1eg_-s4LeyG94Xsx6YJ7fZG8KRRMvMvGSP6AvmX7zYhA/edit#gid=0
+[ER図](https://docs.google.com/spreadsheets/d/1eg_-s4LeyG94Xsx6YJ7fZG8KRRMvMvGSP6AvmX7zYhA/edit#gid=0)
 
-テーブル定義書: https://docs.google.com/spreadsheets/d/1o_CoSptU-fAlfKpo-u5sGtS9yncgbKVh3fxoJQe8J5A/edit#gid=858220341
+[テーブル定義書](https://docs.google.com/spreadsheets/d/1o_CoSptU-fAlfKpo-u5sGtS9yncgbKVh3fxoJQe8J5A/edit#gid=858220341)
+
+※スプレットシート内に設計書関係データのリンクを添付しております。
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1qtckL4ddUpqgRyQqB5VzeDydj5WJ-Kqi2FAqFeN1BG4/edit#gid=0
