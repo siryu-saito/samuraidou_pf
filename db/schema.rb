@@ -28,11 +28,12 @@ ActiveRecord::Schema.define(version: 2021_07_10_012546) do
   end
 
   create_table "post_images", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.integer "post_id", null: false
     t.string "image_id"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_images_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|

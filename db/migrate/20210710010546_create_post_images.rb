@@ -1,9 +1,10 @@
 class CreatePostImages < ActiveRecord::Migration[5.2]
   def change
     create_table :post_images do |t|
-      t.integer :user_id,     null: false
+      t.integer :post_id,     null: false
       t.string  :image_id
       t.string  :description
+      t.index ["post_id"], name: "index_post_images_on_post_id"
 
       t.timestamps
     end
