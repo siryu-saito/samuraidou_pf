@@ -5,6 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
+  has_many :likes
+
+  # likesテーブルにpost_idが存在しているか確認
+  def liked_by?(post_id)
+    likes.where(post_id: post_id).exists?
+  end
 
   enum prefectures:{
     "---":0,

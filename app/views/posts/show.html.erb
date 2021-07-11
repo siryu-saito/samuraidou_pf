@@ -3,6 +3,9 @@
 タイトル：<%= @post.title %><br>
 感想：<%= @post.text %><br>
 場所：<%= @post.place %><br>
+  <div id="post_<%= @post.id %>">
+    <%= render 'post', post: @post %>
+  </div>
 
 <% if @post.post_images.present? %>
   <% @post.post_images.each do |image| %>
@@ -13,4 +16,4 @@
 <% end %>
 
 <%= link_to "編集", edit_post_path %>
-<%= link_to "削除", post_path, method: :delete %>
+<%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
