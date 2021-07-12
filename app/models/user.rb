@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :likes
+  has_many :comments
 
   # likesテーブルにpost_idが存在しているか確認
   def liked_by?(post_id)
