@@ -70,4 +70,7 @@ gem "refile-mini_magick"
 # ユーザー認証機能 gem
 gem 'devise'
 
+# jquery導入gem
 gem 'jquery-rails'
+
+gem 'dotenv-rails'
