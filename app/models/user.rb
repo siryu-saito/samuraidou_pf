@@ -4,6 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :posts, dependent: :destroy
+  has_many :likes
+  has_many :comments
+
+  # likesテーブルにpost_idが存在しているか確認
+  def liked_by?(post_id)
+    likes.where(post_id: post_id).exists?
+  end
+
   enum prefectures:{
     "---":0,
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,

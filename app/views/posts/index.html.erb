@@ -1,0 +1,17 @@
+<h1>投稿一覧</h1>
+<% @posts.each do |post| %>
+  <h4>投稿者</h4>
+  <%= post.user.last_name %>
+  <h4>タイトル</h4>
+  <%= post.title %>
+  <h4>場所</h4>
+  <%= post.place %>
+  <h4>感想</h4>
+  <%= post.text %>
+
+  <div id="post_<%= post.id %>">
+    <%= render 'post', post: post %>
+  </div>
+  <td><%= link_to '詳細', post %></td>
+  <td><%= link_to '編集', edit_post_path(post) %></td>
+<% end %>
