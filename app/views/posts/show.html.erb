@@ -1,5 +1,7 @@
 <h1>投稿詳細</h1>
 
+投稿者：<%= @post.user.user_name %><br>
+
 タイトル：<%= @post.title %><br>
 感想：<%= @post.text %><br>
 場所：<%= @post.place %><br>
@@ -18,7 +20,7 @@
 <h2>コメント一覧</h2>
 <% @comments.each do |f| %>
   <div>
-    <a href="/users/<%= @post.user.id %>"><%= f.user.last_name %></a>
+    <a href="/users/<%= @post.user.id %>"><%= f.user.user_name %></a>
     <%= f.comment_content %>
   </div>
 <% end %>
