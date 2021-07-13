@@ -6,4 +6,7 @@ class Post < ApplicationRecord
 
   accepts_attachments_for :post_images, attachment: :image
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
 end
