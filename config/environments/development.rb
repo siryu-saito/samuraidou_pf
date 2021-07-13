@@ -31,9 +31,22 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
+
+  # お問い合わせ機能の送信設定
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :port => 587,
+    :address => "smtp.gmail.com",
+    :domain => "gmail.com",
+    :user_name => ENV['INQUIRY_MAIL'],
+    :password => ENV['INQUIRY_PASS'],
+    :enable_starttls_auto => true,
+    :authentication => "plain"
+  }
+
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
