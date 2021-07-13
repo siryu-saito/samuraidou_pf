@@ -4,6 +4,12 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :"ユーザー名" %><br />
+    <%= f.text_field :user_name, autofocus: true %>
+    <p>※ユーザー名は他のユーザーも確認する事が出来ます</p>
+  </div>
+
+  <div class="field">
     <%= f.label :"姓" %> / <%= f.label :"名" %><br />
     <%= f.text_field :last_name, autofocus: true %> <%= f.text_field :first_name, autofocus:true %>
   </div>
