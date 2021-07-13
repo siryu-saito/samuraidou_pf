@@ -14,4 +14,5 @@ Rails.application.routes.draw do
       get :complete
     end
   end
+  resources :users, only: [:show, :edit, :update]
 end
