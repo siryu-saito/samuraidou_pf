@@ -4,6 +4,6 @@ class HomesController < ApplicationController
   end
 
   def top
-
+    @posts = Post.all
   end
 end
