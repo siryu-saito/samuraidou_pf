@@ -8,7 +8,14 @@
   <%= post.address %>
   <h4>感想</h4>
   <%= post.text %>
-
+  <h4>画像</h4>
+  <% if post.post_images.present? %>
+    <% post.post_images.each do |image| %>
+      <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+    <% end %>
+    <% else %>
+      <%= image_tag 'no_image.jpg', size: '200×200' %>
+  <% end %>
   <div id="post_<%= post.id %>">
     <%= render 'post', post: post %>
   </div>
