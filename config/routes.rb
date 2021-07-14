@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'homes#about'
+  get 'homes/top'
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 
@@ -14,4 +15,5 @@ Rails.application.routes.draw do
       get :complete
     end
   end
+  resources :users, only: [:show, :edit, :update]
 end

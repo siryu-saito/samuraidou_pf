@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2021_07_12_050629) do
   end
 
   create_table "inquiries", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.text "message"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.text "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2021_07_12_050629) do
   create_table "post_images", force: :cascade do |t|
     t.integer "post_id", null: false
     t.string "image_id"
-    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_images_on_post_id"
@@ -48,7 +47,9 @@ ActiveRecord::Schema.define(version: 2021_07_12_050629) do
     t.integer "user_id", null: false
     t.string "title", null: false
     t.text "text", null: false
-    t.string "place", null: false
+    t.string "address", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_07_12_050629) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "user_name", null: false
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
