@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :address, :text,
-                                 post_images_images: [])
+                                 :rate, post_images_images: [])
   end
 
 end

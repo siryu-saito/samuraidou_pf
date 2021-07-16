@@ -3,7 +3,6 @@ class CreateReviews < ActiveRecord::Migration[5.2]
     create_table :reviews do |t|
       t.integer :user_id,           null: false
       t.integer :post_id,           null: false
-      t.float   :rate, default: 0,  null: false
 
       t.timestamps
     end
