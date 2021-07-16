@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_07_12_050629) do
     t.string "address", null: false
     t.float "latitude"
     t.float "longitude"
+    t.float "rate", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,7 +58,6 @@ ActiveRecord::Schema.define(version: 2021_07_12_050629) do
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "post_id", null: false
-    t.float "rate", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
