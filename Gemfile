@@ -73,6 +73,9 @@ gem 'devise'
 # jquery導入gem
 gem 'jquery-rails'
 
-gem 'dotenv-rails'
-
 gem 'geocoder'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
