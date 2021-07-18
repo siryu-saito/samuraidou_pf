@@ -1,5 +1,8 @@
 <h1>新規投稿</h1>
 <%= form_with model:@post, url: posts_path, local:true do |f|%>
+  <div id="star">
+    <%= f.label :rate,'乗り心地' %>
+  </div>
   <h4>タイトル</h4>
   <%= f.text_field :title %>
   <h4>場所</h4>
@@ -10,5 +13,15 @@
   <%= f.attachment_field :post_images_images, multiple: true %>
 
   <%= f.submit '投稿' %>
+<script>
+$('#star').raty({
+  size     : 38,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn : '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'post[rate]',
+  half: true,
+});
+</script>
 <% end %>
 
