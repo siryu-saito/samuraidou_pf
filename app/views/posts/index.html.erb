@@ -24,8 +24,7 @@
   <div id="post_<%= post.id %>">
     <%= render 'post', post: post %>
   </div>
-  <td><%= link_to '詳細', post %></td>
-  <td><%= link_to '編集', edit_post_path(post) %></td>
+  <%= link_to '詳細', post_path(post)%>
 
   <script>
     $('#star-comf-<%= post.id %>').raty({      //.idでどの評価であるかを取得
