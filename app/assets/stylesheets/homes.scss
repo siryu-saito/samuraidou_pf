@@ -22,7 +22,7 @@ $FormColor: rgb(211, 196, 150);
 $red: rgb(222, 52, 0);
 
 .about {
-  background-image: image-url(main_castle.jpeg);
+  background-image: image-url("main_castle.jpeg");
   min-height: 100vh;
   background-size: cover;
   background-position: center top;
