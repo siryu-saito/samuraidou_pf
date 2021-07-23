@@ -10,12 +10,27 @@
   </head>
 
   <body>
-    <% unless current_page?(root_path) %>
-      <%= render "layouts/header" %>
-    <% end %>
-    <%= yield %>
-    <% unless current_page?(root_path) %>
-      <%= render "layouts/footer" %>
-    <% end %>
+    <div id="nav_slide">
+      <% unless current_page?(root_path) %>
+        <%= render "layouts/header" %>
+      <% end %>
+      <%= yield %>
+      <% unless current_page?(root_path) %>
+        <%= render "layouts/footer" %>
+      <% end %>
+    </div>
+
+    <%= render "layouts/menu" %>
+
+    <script>
+      'use strict';
+
+      $(document).ready(function(){
+        $('#open_nav').on('click', function(){
+          $('#nav_slide, #nav_manu').toggleClass('show');
+        });
+      });
+    </script>
+
   </body>
 </html>

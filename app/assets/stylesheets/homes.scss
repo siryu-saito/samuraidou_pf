@@ -41,24 +41,11 @@ $red: rgb(222, 52, 0);
 
   &_header_nav_li {
     margin-left: 36px;
-
-    .link {
-      color: black;
-      text-decoration: none;
-
-      &:hover {
-        color: red;
-      }
-    }
   }
 
   &_heading {
     text-align: center;
     margin-top: 7%;
-  }
-
-  &_heading_title {
-
   }
 
   &_heading_text {
