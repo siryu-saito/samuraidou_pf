@@ -1,18 +1,55 @@
-<h1>新規投稿</h1>
-<%= form_with model:@post, url: posts_path, local:true do |f|%>
-  <div id="star">
-    <%= f.label :rate,'乗り心地' %>
+<div class="newPost">
+  <div class="newPost_main_image">
+    <div class="newPost_post wrapper">
+      <h1 class="newPost_post_title">新規投稿</h1>
+      <%= form_with model:@post, url: posts_path, local:true do |f|%>
+        <div class="newPost_post_field">
+          <div class="field">
+            <%= f.label :title, "タイトル" %><br>
+            <%= f.text_field :title, class: "text_field" %>
+          </div>
+          <div class="field">
+            <%= f.label :address, "場所" %><br>
+            <%= f.text_field :address, class: "text_field" %>
+          </div>
+          <div class="field">
+            <%= f.label :text, "感想" %><br>
+            <%= f.text_area :text, class: "text_area" %>
+          </div>
+          <div id="star">
+            <%= f.label :rate, "評価：" %>
+          </div>
+          <div class="field"><br>
+            <%= f.label :post_images_images, "画像：" %>
+            <%= f.attachment_field :post_images_images, multiple: true %>
+            <%= f.submit '投稿' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-  <h4>場所</h4>
-  <%= f.text_field :address %>
-  <h4>感想</h4>
-  <%= f.text_field :text %>
-  <h4>画像</h4>
-  <%= f.attachment_field :post_images_images, multiple: true %>
+</div>
 
-  <%= f.submit '投稿' %>
+
+
+<h1>投稿一覧</h1>
+<% @posts.each do |post| %>
+  <h4>タイトル</h4>
+  <%= post.title %>
+  <h4>場所</h4>
+  <%= post.address %>
+  <h4>感想</h4>
+  <%= post.text %>
+  <h4>画像</h4>
+  <% if post.post_images.present? %>
+    <% post.post_images.first(1).each do |image| %>
+      <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+    <% end %>
+    <% else %>
+      <%= image_tag 'no_image.jpg', size: '200×200' %>
+  <% end %>
+<% end %>
+<%= link_to "他の投稿を見る", posts_path %>
 <script>
 $('#star').raty({
   size     : 100,
@@ -23,5 +60,3 @@ $('#star').raty({
   half: true,
 });
 </script>
-<% end %>
-

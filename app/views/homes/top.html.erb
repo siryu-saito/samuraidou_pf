@@ -1,22 +1,27 @@
-<%= link_to new_post_path do %>
-  <button>新規投稿</button>
-<% end %>
-
-<h1>投稿一覧</h1>
-<% @posts.each do |post| %>
-  <h4>タイトル</h4>
-  <%= post.title %>
-  <h4>場所</h4>
-  <%= post.address %>
-  <h4>感想</h4>
-  <%= post.text %>
-  <h4>画像</h4>
-  <% if post.post_images.present? %>
-    <% post.post_images.first(1).each do |image| %>
-      <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+<div class="top">
+  <div class="top_header wrapper">
+    <%= link_to root_path do %>
+      <h1><img class="top_header_logo", src="https://placehold.jp/150x100.png"></h1>
     <% end %>
-    <% else %>
-      <%= image_tag 'no_image.jpg', size: '200×200' %>
-  <% end %>
-<% end %>
-<%= link_to "他の投稿を見る", posts_path %>
+    <nav class="top_header_nav">
+      <ul class="top_header_nav_ul">
+        <li class="top_header_nav_li">
+          <%= link_to "新規登録", new_user_registration_path, class:"link" %>
+        </li>
+        <li class="top_header_nav_li">
+          <%= link_to "ログイン", new_user_session_path, class:"link" %>
+        </li>
+        <li class="top_header_nav_li">
+          <%= link_to "お問い合わせ", new_inquiry_path, class:"link" %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="top_heading">
+    <h2 class="top_heading_title">偉人達が歩いた道を私達も歩いてみよう</h2>
+    <p class="new_heading_text">
+      texttexttexttexttexttexttexttexttext<br>
+      texttexttexttexttexttexttexttexttexttexttext
+    </p>
+  </div>
+</div>

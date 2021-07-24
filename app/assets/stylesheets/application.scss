@@ -26,7 +26,7 @@ $red: rgb(222, 52, 0);
 }
 
 .wrapper {
-  max-width: 1350px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 2%;
 }
@@ -38,6 +38,25 @@ $red: rgb(222, 52, 0);
   &:hover {
     cursor: pointer;
   }
+}
+
+.text_field {
+  padding: 10px;
+  background-color: $White;
+  opacity: 0.5;
+  border: 1px solid $Black;
+  border-radius: 5px;
+}
+
+.text_area {
+  resize: none;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  background-color: $White;
+  opacity: 0.5;
+  border: 1px solid $Black;
+  border-radius: 5px;
 }
 
 .header {
@@ -60,6 +79,7 @@ $red: rgb(222, 52, 0);
   #open_nav {
     height: 10vh;
   }
+
   .hamburder {
     &_icon {
       height: 100%;
