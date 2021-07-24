@@ -22,10 +22,7 @@ $red: rgb(222, 52, 0);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
+  list-style: none;
 }
 
 .wrapper {
@@ -34,7 +31,85 @@ img {
   padding: 0 2%;
 }
 
-body {
+.link {
+  color: black;
+  text-decoration: none;
 
+  &:hover {
+    cursor: pointer;
+  }
 }
 
+.text_field {
+  padding: 10px;
+  background-color: $White;
+  opacity: 0.5;
+  border: 1px solid $Black;
+  border-radius: 5px;
+}
+
+.text_area {
+  resize: none;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  background-color: $White;
+  opacity: 0.5;
+  border: 1px solid $Black;
+  border-radius: 5px;
+}
+
+.header {
+  height: 10vh;
+  background-color: $Black;
+
+  &_nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_logo {
+    height: 10vh;
+
+    &_image {
+      height: 100%;
+    }
+  }
+
+  #open_nav {
+    height: 10vh;
+  }
+
+  .hamburder {
+    &_icon {
+      height: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.footer {
+  height: 10vh;
+  background-color: $Black;
+}
+
+
+#nav_manu {
+  background-color: $Black;
+  position: fixed;
+  right: -150px;
+  top: 0;
+  width: 150px;
+  height: 100%;
+}
+
+.show {
+  transform: translate3d(-150px, 0 , 0);
+}
+
+#nav_slide, #nav_manu {
+  transition: transform 0.3s;
+}
