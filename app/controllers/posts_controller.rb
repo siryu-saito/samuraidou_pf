@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.post_images.build
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(8)
   end
 
   def create
