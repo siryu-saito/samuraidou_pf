@@ -27,14 +27,11 @@
   <%= link_to '詳細', post_path(post)%>
 
   <script>
-    $('#star-comf-<%= post.id %>').raty({      //.idでどの評価であるかを取得
-      size: 38,
+    $('#star-comf-<%= post.id %>').raty({
       starOff:  '<%= asset_path('star-off.png') %>',
       starOn : '<%= asset_path('star-on.png') %>',
-      starHalf: '<%= asset_path('star-half.png') %>',
-      half: true,
-      readOnly: true,                             //readOnlyオプションで読み込み専用とする。編集できない。
-      score: <%= post.rate %>,              //scoreオプションで評価内容を取得
+      readOnly: true,
+      score: <%= post.rate %>,
     });
   </script>
 <% end %>
