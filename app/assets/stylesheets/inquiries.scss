@@ -1,3 +1,38 @@
 // Place all the styles related to the Inquiries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$White: white;
+$Black: #333333;
+$boderColor: #d3c496;
+$red: rgb(135, 25, 0);
+
+.newInquiry {
+  min-height: 80vh;
+  &_title {
+    font-size: 32px;
+    padding-top: 3%;
+    text-align: center;
+  }
+
+  &_post {
+    padding-top: 3%;
+    padding-left: 10%;
+  }
+}
+
+.newInquiry_comple {
+  min-height: 80vh;
+  text-align: center;
+
+  &_title {
+    padding: 10% 0 5% 0;
+  }
+
+  &_thackYou {
+    padding-bottom: 5%;
+  }
+
+  &_check {
+    padding-bottom: 5%;
+  }
+}
