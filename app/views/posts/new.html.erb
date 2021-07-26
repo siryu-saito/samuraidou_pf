@@ -1,9 +1,9 @@
 <div class="newPost">
   <div class="newPost_main_image">
-    <div class="newPost_post wrapper">
+    <div class="form wrapper">
       <h1 class="newPost_post_title">新規投稿</h1>
       <%= form_with model:@post, url: posts_path, local:true do |f|%>
-        <div class="newPost_post_field">
+        <div class="form_post">
           <div class="field">
             <%= f.label :title, "タイトル" %><br>
             <%= f.text_field :title, class: "text_field" %>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="newPost_index wrapper">
-    <h1 class="newPost_index_title">新規投稿一覧</h1>
+    <h1 class="form_title">新規投稿一覧</h1>
     <div class="newPost_index_box">
       <% @posts.each do |post| %>
         <%= link_to post_path(post) do %>
