@@ -1,18 +1,20 @@
-<h1>お問い合わせフォーム</h1>
-<%= form_with model: @inquiry, local: true, url: confirm_inquiries_path do |f| %>
-  <div>
-    <%= f.label :name, 'お名前' %><br>
-    <%= f.text_field :name, autofocus: true, placeholder:'侍道 太郎' %>
+<div class="form wrapper">
+  <h1 class="form_title">お問い合わせフォーム</h1>
+  <div class="form_post">
+    <%= form_with model: @inquiry, local: true, url: confirm_inquiries_path do |f| %>
+      <div class="field">
+        <%= f.label :name, 'お名前' %><br>
+        <%= f.text_field :name, autofocus: true, placeholder:'侍道 太郎', class: "text_field" %>
+      </div>
+      <div class="field">
+        <%= f.label :email, 'メールアドレス' %><br>
+        <%= f.text_field :email, placeholder:'test@test.com', class: "text_field" %>
+      </div>
+      <div class="field">
+        <%= f.label :message, 'お問い合わせ内容' %><br>
+        <%= f.text_area :message, placeholder:'お問い合わせ内容は10文字以上でお願いします', class: "text_area" %>
+      </div>
+      <%= f.submit '確認画面へ進む', class: "button" %>
+    <% end %>
   </div>
-  <div>
-    <%= f.label :email, 'メールアドレス' %><br>
-    <%= f.text_field :email, placeholder:'test@test.com' %>
-  </div>
-  <div>
-    <%= f.label :message, 'お問い合わせ内容' %><br>
-    <%= f.text_area :message, placeholder:'お問い合わせ内容は10文字以上でお願いします' %>
-  </div>
-  <div>
-    <%= f.submit '確認画面へ進む' %>
-  </div>
-<% end %>
+</div>
