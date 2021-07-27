@@ -1,46 +1,72 @@
-
-
-<h1>投稿詳細</h1>
-<div class="star-group">
-    <div class="detail-review">評価</div>
-    <div class="detail-value", id="star-comf-<%= @post.id %>"></div>
-    <div class="eval-star"><%= @post.rate %>/5点</div>
+<div class="postShow wrapper">
+  <div class="postShow_summary">
+    <h1 class="title">投稿詳細</h1>
+    <div class="postShow_summary_show">
+      <div class="star-group">
+        <div class="detail-review">評価</div>
+        <div class="detail-value", id="star-comf-<%= @post.id %>"></div>
+        <div class="eval-star"><%= @post.rate %>/5点</div>
+      </div>
+      <div class="postShow_summary_show_user">
+        <p>投稿者</p>
+        <%= @post.user.user_name %>
+      </div>
+      <div class="postShow_summary_show_title">
+        <p>タイトル</p>
+        <%= @post.title %>
+      </div>
+      <div class="postShow_summary_show_text">
+        <p>感想</p>
+        <%= @post.text %>
+      </div>
+      <div class="postShow_summary_show_address">
+        <p>場所</p>
+        <%= @post.address %>
+      </div>
+      <div id="post_<%= @post.id %>">
+        <%= render 'post', post: @post %>
+      </div>
+      <div class="postShow_summary_show_images">
+        <% if @post.post_images.present? %>
+          <% @post.post_images.each do |image| %>
+            <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+          <% end %>
+        <% else %>
+          <%= image_tag 'no_image.jpg', size: '200×200' %>
+        <% end %>
+      </div>
+      <%= link_to "編集", edit_post_path %>
+      <%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
   </div>
-投稿者：<%= @post.user.user_name %><br>
-
-タイトル：<%= @post.title %><br>
-感想：<%= @post.text %><br>
-場所：<%= @post.address %><br>
-  <div id="post_<%= @post.id %>">
-    <%= render 'post', post: @post %>
+  <div class="postShow_side">
+    <div class="postShow_side_box">
+      <h1 class="title">地図</h1>
+      <div id="map"></div>
+    </div>
+    <h1 class="title">コメント一覧</h1>
+    <div class="postShow_side_userComment">
+      <%= form_with(model:[@post, @comment], method: :post) do |f| %>
+        <%= f.text_area :comment_content, class: "comment_area", placeholder:'コメント' %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+        <%= f.submit "コメント", class: "commentButton" %>
+      <% end %>
+    </div>
+    <div class="postShow_side_indexComment">
+      <div class="postShow_side_indexComment_slide">
+        <% @comments.each do |f| %>
+          <div class="postShow_side_indexComment_slide_comment">
+            <a href="/users/<%= @post.user.id %>"><%= f.user.user_name %></a>
+            <%= f.comment_content %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
 
-<% if @post.post_images.present? %>
-  <% @post.post_images.each do |image| %>
-    <%= attachment_image_tag image, :image, :fill, 200, 200 %>
-  <% end %>
-  <% else %>
-    <%= image_tag 'no_image.jpg', size: '200×200' %>
-<% end %>
 
-<h2>コメント一覧</h2>
-<% @comments.each do |f| %>
-  <div>
-    <a href="/users/<%= @post.user.id %>"><%= f.user.user_name %></a>
-    <%= f.comment_content %>
-  </div>
-<% end %>
 
-<%= form_with(model:[@post, @comment], method: :post) do |f| %>
-  <%= f.text_area :comment_content %>
-  <%= f.hidden_field :post_id, value: @post.id %>
-  <%= f.submit "コメント" %>
-<% end %>
-
-<%= link_to "編集", edit_post_path %>
-<%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<div id="map"></div>
 
 <script type="text/javascript">
   function initMap() {
@@ -72,19 +98,15 @@
 <script async defer
               src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
 </script>
-<style type="text/css">
-  #map { height: 300px;
-         width: 50%;}
-</style>
 
-  <script>
-    $('#star-comf-<%= @post.id %>').raty({      //.idでどの評価であるかを取得
-      size: 38,
-      starOff:  '<%= asset_path('star-off.png') %>',
-      starOn : '<%= asset_path('star-on.png') %>',
-      starHalf: '<%= asset_path('star-half.png') %>',
-      half: true,
-      readOnly: true,                             //readOnlyオプションで読み込み専用とする。編集できない。
-      score: <%= @post.rate %>,              //scoreオプションで評価内容を取得
-    });
-  </script>
+<script>
+  $('#star-comf-<%= @post.id %>').raty({      //.idでどの評価であるかを取得
+    size: 38,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,                             //readOnlyオプションで読み込み専用とする。編集できない。
+    score: <%= @post.rate %>,              //scoreオプションで評価内容を取得
+  });
+</script>

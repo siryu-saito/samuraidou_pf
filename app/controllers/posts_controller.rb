@@ -3,20 +3,20 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.post_images.build
-    @posts = Post.page(params[:page]).per(8)
+    @posts = Post.page(params[:page]).per(8).order(created_at: :desc)
   end
 
   def create
     post = Post.new(post_params)
     post.user_id = current_user.id
     post.save
-    redirect_to posts_path
+    redirect_to new_post_path
   end
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
     @comment = Comment.new
+    @comments = @post.comments.all.order(created_at: :desc)
   end
 
   def edit
