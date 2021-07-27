@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="newPost_index wrapper">
-    <h1 class="form_title">新規投稿一覧</h1>
+    <h1 class="title">新規投稿一覧</h1>
     <div class="newPost_index_box">
       <% @posts.each do |post| %>
         <%= link_to post_path(post) do %>
@@ -39,7 +39,7 @@
                 <%= attachment_image_tag image, :image, :fill, 200, 200 %>
               <% end %>
             <% else %>
-              <%= image_tag 'no_image.jpg', size: '200×200' %>
+              <%= image_tag 'no_image.jpg', width: '70%', height: '70%' %>
             <% end %>
             <p class="link"><%= post.title %></p>
           </div>
