@@ -1,5 +1,11 @@
-<h1>投稿詳細</h1>
 
+
+<h1>投稿詳細</h1>
+<div class="star-group">
+    <div class="detail-review">評価</div>
+    <div class="detail-value", id="star-comf-<%= @post.id %>"></div>
+    <div class="eval-star"><%= @post.rate %>/5点</div>
+  </div>
 投稿者：<%= @post.user.user_name %><br>
 
 タイトル：<%= @post.title %><br>
@@ -33,6 +39,8 @@
 
 <%= link_to "編集", edit_post_path %>
 <%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<div id="map"></div>
 
 <script type="text/javascript">
   function initMap() {
@@ -69,4 +77,14 @@
          width: 50%;}
 </style>
 
-<div id="map"></div>
+  <script>
+    $('#star-comf-<%= @post.id %>').raty({      //.idでどの評価であるかを取得
+      size: 38,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      half: true,
+      readOnly: true,                             //readOnlyオプションで読み込み専用とする。編集できない。
+      score: <%= @post.rate %>,              //scoreオプションで評価内容を取得
+    });
+  </script>
