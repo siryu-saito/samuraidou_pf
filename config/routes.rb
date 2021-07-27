@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 
-  resources :posts do
+  resources :posts, :except => :index do
     resources :comments, only: [:create]
   end
   resources :inquiries, only: [:new, :create] do
