@@ -45,7 +45,7 @@ $red: rgb(135, 25, 0);
 }
 
 .text_field {
-  padding: 10px;
+  padding: 5px;
   width: 200px;
   height: 30px;
   background-color: $White;
@@ -80,16 +80,16 @@ $red: rgb(135, 25, 0);
 .form {
   min-height: 80vh;
 
-  &_title {
-    margin-top: 1%;
-    text-align: center;
-    border-bottom: 1px solid $boderColor;
-  }
-
   &_post {
     padding-top: 1%;
     padding-left: 10%;
   }
+}
+
+.title {
+  margin-top: 2vh;
+  text-align: center;
+  border-bottom: 1px solid $boderColor;
 }
 
 .header {

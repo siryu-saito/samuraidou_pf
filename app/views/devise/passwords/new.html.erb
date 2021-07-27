@@ -1,5 +1,5 @@
 <div class="form">
-  <h1 class="form_title">パスワードをお忘れですか?</h1>
+  <h1 class="title">パスワードをお忘れですか?</h1>
   <div class="form_post">
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
