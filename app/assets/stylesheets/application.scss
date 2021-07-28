@@ -131,20 +131,45 @@ $red: rgb(135, 25, 0);
 
 
 #nav_manu {
-  background-color: $red;
   position: fixed;
-  right: -200px;
+  right: -20vw;
   top: 0;
-  width: 200px;
+  width: 20vw;
   height: 100%;
 }
 
 .show {
-  transform: translate3d(-200px, 0 , 0);
+  transform: translate3d(-20vw, 0 , 0);
 }
 
 #nav_slide, #nav_manu {
   transition: transform 0.3s;
+}
+
+.nav_side_menu {
+  border: 4px double #000;
+
+  &_ul {
+    padding-top: 10vh;
+    text-align: center;
+  }
+
+  &_li {
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    margin-bottom: 5px;
+    background-color: $red;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    & .link {
+      color: $White;
+      font-weight: bold;
+    }
+  }
 }
 
 .pagination {
