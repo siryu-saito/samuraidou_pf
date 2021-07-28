@@ -114,7 +114,8 @@ $red: rgb(135, 25, 0);
 
   .hamburder {
     &_icon {
-      height: 100%;
+      margin-top: 12%;
+      height: 80%;
 
       &:hover {
         cursor: pointer;
