@@ -9,8 +9,12 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     post.user_id = current_user.id
-    post.save
-    redirect_to new_post_path
+    if post.save
+      redirect_to new_post_path
+    else
+      flash[:flash] = "正しく入力してください"
+      redirect_to new_post_path
+    end
   end
 
   def show

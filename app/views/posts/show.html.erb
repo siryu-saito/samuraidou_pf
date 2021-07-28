@@ -47,7 +47,7 @@
     <h1 class="title">コメント一覧</h1>
     <div class="postShow_side_userComment">
       <%= form_with(model:[@post, @comment], method: :post) do |f| %>
-        <%= f.text_area :comment_content, class: "comment_area", placeholder:'コメント' %>
+        <%= f.text_area :comment_content, class: "comment_area", placeholder:'コメント(30文字以内)' %>
         <%= f.hidden_field :post_id, value: @post.id %>
         <%= f.submit "コメント", class: "commentButton" %>
       <% end %>
