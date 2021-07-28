@@ -9,6 +9,9 @@ class Post < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+  validates :title, {length: {in: 1..15} }
+  validates :address, {presence: true}
+  validates :text, {presence: true}
   validates :rate, numericality: {
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1

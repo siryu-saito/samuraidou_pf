@@ -76,7 +76,7 @@ $red: rgb(135, 25, 0);
   cursor: pointer;
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
@@ -153,6 +153,12 @@ $red: rgb(135, 25, 0);
 .nav_side_menu {
   border: 4px double #000;
 
+  &_user {
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+  }
+
   &_ul {
     padding-top: 10vh;
     text-align: center;
@@ -170,6 +176,7 @@ $red: rgb(135, 25, 0);
     }
 
     & .link {
+      padding: 7% 27%;
       color: $White;
       font-weight: bold;
     }
@@ -179,4 +186,13 @@ $red: rgb(135, 25, 0);
 .pagination {
   margin: 30px;
   text-align: center;
+}
+
+#flash, .alert {
+  color:#262626;
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px;
+  font-weight:850;
 }
