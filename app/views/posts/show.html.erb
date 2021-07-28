@@ -35,8 +35,10 @@
           <%= image_tag 'no_image.jpg', size: '200×200' %>
         <% end %>
       </div>
-      <%= link_to "編集", edit_post_path %>
-      <%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if @post.user == current_user %>
+        <%= link_to "編集", edit_post_path %>
+        <%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
   </div>
   <div class="postShow_side">
