@@ -1,23 +1,25 @@
 <div class="form wrapper">
   <h1 class="title">お問い合わせ内容確認</h1>
-  <div class="form_post">
+  <div class="inquiry_comfirm">
     <%= form_with model: @inquiry, local: true, url: inquiries_path, method: :post do |f| %>
-      <div>
-        <%= f.label :name, 'お名前' %><br>
+      <div class="inquiry_comfirm_text">
+        <%= f.label :name, 'お名前：' %>
         <%= @inquiry.name %>
         <%= f.hidden_field :name, :value => @inquiry.name %>
       </div>
-      <div>
-        <%= f.label :email, 'メールアドレス' %><br>
+      <div class="inquiry_comfirm_text">
+        <%= f.label :email, 'メールアドレス：' %>
         <%= @inquiry.email %>
         <%= f.hidden_field :email, :value => @inquiry.email %>
       </div>
-      <div>
-        <%= f.label :message, 'お問い合わせ内容' %><br>
+      <div class="inquiry_comfirm_text">
+        <%= f.label :message, 'お問い合わせ内容：' %>
         <%= @inquiry.message %>
         <%= f.hidden_field :message, :value => @inquiry.message %>
       </div>
-      <%= f.submit '送信する', class: "button" %>
+      <div class="inquiry_comfirm_action">
+        <%= f.submit '送信する', class: "button" %>
+      </div>
     <% end %>
   </div>
 </div>
