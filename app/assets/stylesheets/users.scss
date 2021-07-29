@@ -16,6 +16,19 @@ $red: rgb(135, 25, 0);
 
     &_show {
       margin-top: 3%;
+
+      &_field {
+        text-align: center;
+        margin-bottom: 5%;
+      }
+
+      &_button {
+        text-align: center;
+
+        & p {
+          font-size: 20px;
+        }
+      }
     }
   }
 
