@@ -131,6 +131,12 @@ $red: rgb(135, 25, 0);
 .footer {
   height: 10vh;
   background-color: $Black;
+
+  &_text {
+    color: $White;
+    padding-top: 2%;
+    text-align: center;
+  }
 }
 
 
