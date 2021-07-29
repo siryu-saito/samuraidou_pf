@@ -3,24 +3,24 @@
     <h1 class="title">投稿詳細</h1>
     <div class="postShow_summary_show">
       <div class="star-group">
-        <div class="detail-review">評価</div>
+        <div class="detail-review">--- 評価 ---</div>
         <div class="detail-value", id="star-comf-<%= @post.id %>"></div>
         <div class="eval-star"><%= @post.rate %>/5点</div>
       </div>
       <div class="postShow_summary_show_user">
-        <p>投稿者</p>
+        <p>--- 投稿者 ---</p>
         <%= @post.user.user_name %>
       </div>
       <div class="postShow_summary_show_title">
-        <p>タイトル</p>
+        <p>--- タイトル ---</p>
         <%= @post.title %>
       </div>
       <div class="postShow_summary_show_text">
-        <p>感想</p>
+        <p>--- 感想 ---</p>
         <%= @post.text %>
       </div>
       <div class="postShow_summary_show_address">
-        <p>場所</p>
+        <p>--- 場所 ---</p>
         <%= @post.address %>
       </div>
       <div id="post_<%= @post.id %>">

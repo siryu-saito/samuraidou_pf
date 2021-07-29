@@ -53,6 +53,10 @@ $red: rgb(222, 52, 0);
 
   &_summary {
     width: 58%;
+
+    &_show {
+      text-align: center;
+    }
   }
 
   &_side {
