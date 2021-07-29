@@ -3,24 +3,24 @@
     <h1 class="title">投稿詳細</h1>
     <div class="postShow_summary_show">
       <div class="star-group">
-        <div class="detail-review">評価</div>
+        <div class="detail-review">--- 評価 ---</div>
         <div class="detail-value", id="star-comf-<%= @post.id %>"></div>
         <div class="eval-star"><%= @post.rate %>/5点</div>
       </div>
       <div class="postShow_summary_show_user">
-        <p>投稿者</p>
+        <p>--- 投稿者 ---</p>
         <%= @post.user.user_name %>
       </div>
       <div class="postShow_summary_show_title">
-        <p>タイトル</p>
+        <p>--- タイトル ---</p>
         <%= @post.title %>
       </div>
       <div class="postShow_summary_show_text">
-        <p>感想</p>
+        <p>--- 感想 ---</p>
         <%= @post.text %>
       </div>
       <div class="postShow_summary_show_address">
-        <p>場所</p>
+        <p>--- 場所 ---</p>
         <%= @post.address %>
       </div>
       <div id="post_<%= @post.id %>">
@@ -35,8 +35,10 @@
           <%= image_tag 'no_image.jpg', size: '200×200' %>
         <% end %>
       </div>
-      <%= link_to "編集", edit_post_path %>
-      <%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if @post.user == current_user %>
+        <%= link_to "編集", edit_post_path %>
+        <%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
   </div>
   <div class="postShow_side">
@@ -47,7 +49,7 @@
     <h1 class="title">コメント一覧</h1>
     <div class="postShow_side_userComment">
       <%= form_with(model:[@post, @comment], method: :post) do |f| %>
-        <%= f.text_area :comment_content, class: "comment_area", placeholder:'コメント' %>
+        <%= f.text_area :comment_content, class: "comment_area", placeholder:'コメント(30文字以内)' %>
         <%= f.hidden_field :post_id, value: @post.id %>
         <%= f.submit "コメント", class: "commentButton" %>
       <% end %>

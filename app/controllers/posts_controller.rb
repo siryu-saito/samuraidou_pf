@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -9,8 +10,12 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     post.user_id = current_user.id
-    post.save
-    redirect_to new_post_path
+    if post.save
+      redirect_to new_post_path
+    else
+      flash[:flash] = "正しく入力してください"
+      redirect_to new_post_path
+    end
   end
 
   def show
@@ -42,4 +47,10 @@ class PostsController < ApplicationController
                                  :rate, post_images_images: [])
   end
 
+  def ensure_correct_user
+    @post = Post.find(params[:id])
+    unless @post.user == current_user
+      redirect_to new_post_path
+    end
+  end
 end

@@ -8,10 +8,10 @@ class User < ApplicationRecord
   has_many :likes
   has_many :comments
 
-  # likesテーブルにpost_idが存在しているか確認
   def liked_by?(post_id)
     likes.where(post_id: post_id).exists?
   end
+
 
   enum prefectures:{
     "---":0,
