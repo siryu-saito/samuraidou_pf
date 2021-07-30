@@ -26,6 +26,9 @@
       <div id="post_<%= @post.id %>">
         <%= render 'post', post: @post %>
       </div>
+      <% if @post.user == current_user %>
+        <%= link_to "編集", edit_post_path %>
+      <% end %>
       <div class="postShow_summary_show_images">
         <% if @post.post_images.present? %>
           <% @post.post_images.each do |image| %>
@@ -35,10 +38,6 @@
           <%= image_tag 'no_image.jpg', size: '200×200' %>
         <% end %>
       </div>
-      <% if @post.user == current_user %>
-        <%= link_to "編集", edit_post_path %>
-        <%= link_to "削除", post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
     </div>
   </div>
   <div class="postShow_side">
