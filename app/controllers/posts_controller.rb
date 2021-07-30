@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     post.user_id = current_user.id
     if post.save
-      redirect_to new_post_path
+      redirect_to new_post_path(anchor: 'saikabu')
     else
       flash[:flash] = "正しく入力してください"
       redirect_to new_post_path
