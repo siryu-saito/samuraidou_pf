@@ -6,21 +6,25 @@
         <p>--- ユーザーネーム ---</p>
         <%= @user.user_name %>
       </div>
-      <div class="userShow_myPage_show_field">
-        <p>--- 名前 ---</p>
-        <%= @user.last_name %> <%= @user.first_name %>
-      </div>
-      <div class="userShow_myPage_show_field">
-        <p>--- 名前（カナ） ---</p>
-        <%= @user.last_name_kana %> <%= @user.first_name_kana %>
-      </div>
+      <% if @user == current_user %>
+        <div class="userShow_myPage_show_field">
+          <p>--- 名前 ---</p>
+          <%= @user.last_name %> <%= @user.first_name %>
+        </div>
+        <div class="userShow_myPage_show_field">
+          <p>--- 名前（カナ） ---</p>
+          <%= @user.last_name_kana %> <%= @user.first_name_kana %>
+        </div>
+      <% end %>
       <div class="userShow_myPage_show_field">
         <p>--- 都道府県 ---</p>
         <%= @user.prefectures %>
       </div>
-      <div class="userShow_myPage_show_button">
-        <%= link_to "編集", edit_user_path, class: "button" %>
-      </div>
+      <% if @user == current_user %>
+        <div class="userShow_myPage_show_button">
+          <%= link_to "編集", edit_user_path, class: "button" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="userShow_myPost">
