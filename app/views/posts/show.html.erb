@@ -9,7 +9,7 @@
       </div>
       <div class="postShow_summary_show_user">
         <p>--- 投稿者 ---</p>
-        <%= @post.user.user_name %>
+        <a href="/users/<%= @post.user.id %>"><%= @post.user.user_name %></a>
       </div>
       <div class="postShow_summary_show_title">
         <p>--- タイトル ---</p>
@@ -57,7 +57,7 @@
       <div class="postShow_side_indexComment_slide">
         <% @comments.each do |f| %>
           <div class="postShow_side_indexComment_slide_comment">
-            <a href="/users/<%= @post.user.id %>"><%= f.user.user_name %></a>
+            <a href="/users/<%= f.user.id %>"><%= f.user.user_name %></a>
             <%= f.comment_content %>
           </div>
         <% end %>
