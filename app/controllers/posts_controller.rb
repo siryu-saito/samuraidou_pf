@@ -40,6 +40,12 @@ class PostsController < ApplicationController
     redirect_to new_post_path
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   private
 
   def post_params

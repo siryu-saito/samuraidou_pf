@@ -17,4 +17,8 @@ class Post < ApplicationRecord
     greater_than_or_equal_to: 1
   }, presence: true
 
+  def self.search(keyword)
+    where(["address like?","%#{keyword}%"])
+  end
+
 end
