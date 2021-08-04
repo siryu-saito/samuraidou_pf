@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get '/search' => 'search#search'
 
   root to: 'homes#top'
   post 'like/:id' => 'likes#create', as: 'create_like'
