@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  get '/search' => 'search#search'
+  get 'search' => 'posts#search'
 
   root to: 'homes#top'
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 
-  resources :posts, :except => :index do
+  resources :posts do
     resources :comments, only: [:create]
   end
   resources :inquiries, only: [:new, :create] do
