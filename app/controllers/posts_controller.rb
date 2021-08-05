@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     post.user_id = current_user.id
     if post.save
-      redirect_to new_post_path
+      redirect_to new_post_path(anchor: 'saikabu')
     else
       flash[:flash] = "正しく入力してください"
       redirect_to new_post_path
@@ -38,6 +38,12 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     redirect_to new_post_path
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
   end
 
   private

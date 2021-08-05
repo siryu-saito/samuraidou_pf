@@ -35,6 +35,10 @@
   </div>
   <div class="newPost_index wrapper">
     <h1 class="title">新規投稿一覧</h1>
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, value: @keyword %>
+      <%= f.submit :"検索" %>
+    <% end %>
     <div class="newPost_index_box">
       <% @posts.each do |post| %>
         <%= link_to post_path(post) do %>
@@ -53,6 +57,7 @@
     </div>
   </div>
 </div>
+<p id="saikabu"></p>
 <%= paginate @posts %>
 
 <script>

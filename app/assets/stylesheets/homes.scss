@@ -31,10 +31,11 @@ $red: rgb(222, 52, 0);
   &_header {
     display: flex;
     justify-content: space-between;
+    height: 10vh;
 
     &_logo {
-      margin-top: 34px;
-      color: $Black;
+      margin: 5% 0;
+      height: 90%;
     }
   }
 
