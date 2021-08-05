@@ -31,8 +31,6 @@
 
 [テーブル定義書](https://docs.google.com/spreadsheets/d/1o_CoSptU-fAlfKpo-u5sGtS9yncgbKVh3fxoJQe8J5A/edit#gid=858220341)
 
-※スプレットシート内に設計書関係データのリンクを添付しております。
-
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1qtckL4ddUpqgRyQqB5VzeDydj5WJ-Kqi2FAqFeN1BG4/edit#gid=0
 
@@ -44,4 +42,6 @@ JSライブラリ：jQuery
 IDE：Cloud9
 
 ## 使用素材
-検討中
+アイコン素材：[Font Awesome](https://fontawesome.com/)
+フォント素材：[Google Fonts](https://fonts.google.com/)
+写真素材：[O-DAN](https://o-dan.net/ja/)
