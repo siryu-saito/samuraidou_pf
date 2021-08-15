@@ -27,6 +27,11 @@ $red: rgb(222, 52, 0);
 
   &_index {
 
+    .keyword_form {
+      margin: 10px 10px 0 0;
+      text-align: right;
+    }
+
     &_box {
       margin-bottom: 30px;
       text-align: center;
