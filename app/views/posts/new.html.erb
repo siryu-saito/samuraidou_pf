@@ -1,42 +1,40 @@
 <div class="newPost">
-  <div class="newPost_main_image">
+  <div class="newPost_main">
     <% if flash[:flash] %>
       <p id="flash">
         <%= flash[:flash] %>
       </p>
     <% end %>
-    <div class="form wrapper">
-      <h1 class="newPost_post_title">新規投稿</h1>
+    <div class="newPost_form">
+      <h1>新規投稿</h1>
       <%= form_with model:@post, url: posts_path, local:true do |f|%>
-        <div class="form_post">
-          <div class="field">
-            <%= f.label :title, "タイトル" %><br>
-            <%= f.text_field :title, placeholder:'タイトル(15文字以内)', class: "text_field" %>
-          </div>
-          <div class="field">
-            <%= f.label :address, "場所" %><br>
-            <%= f.text_field :address, placeholder:'例:松本城', class: "text_field" %>
-          </div>
-          <div class="field">
-            <%= f.label :text, "感想" %><br>
-            <%= f.text_area :text, placeholder:'感想を記入してください', class: "text_area" %>
-          </div>
-          <div id="star" class="field">
-            <%= f.label :rate, "評価" %><br>
-          </div>
-          <div class="field">
-            <%= f.label :post_images_images, "画像" %><br>
-            <%= f.attachment_field :post_images_images, multiple: true %>
-          </div>
-          <%= f.submit '投稿', class: "button" %>
+        <div class="field">
+          <%= f.label :title, "タイトル" %><br>
+          <%= f.text_field :title, placeholder:'タイトル(15文字以内)', class: "text_field" %>
         </div>
+        <div class="field">
+          <%= f.label :address, "場所" %><br>
+          <%= f.text_field :address, placeholder:'例:松本城', class: "text_field" %>
+        </div>
+        <div class="field">
+          <%= f.label :text, "感想" %><br>
+          <%= f.text_area :text, placeholder:'感想を記入してください', class: "text_area" %>
+        </div>
+        <div id="star" class="field">
+          <%= f.label :rate, "評価" %><br>
+        </div>
+        <div class="field">
+          <%= f.label :post_images_images, "画像" %><br>
+          <%= f.attachment_field :post_images_images, multiple: true %>
+        </div>
+        <%= f.submit '投稿', class: "button" %>
       <% end %>
     </div>
   </div>
   <div class="newPost_index wrapper">
     <h1 class="title">新規投稿一覧</h1>
     <%= form_with url: search_path, method: :get, class: "keyword_form", local: true do |f| %>
-      <%= f.text_field :keyword, value: @keyword %>
+      <%= f.text_field :keyword, class: "text_field", value: @keyword %>
       <%= f.submit :"検索" %>
     <% end %>
     <div class="newPost_index_box">

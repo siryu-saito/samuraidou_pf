@@ -1,25 +1,5 @@
-// .about_main {
-//   min-height: 100vh;
-//   width: 100%;
-//   background-image: url('main_castle.jpeg');
-//   background-size: cover;
-//   background-position: center top;
-//   background-repeat: no-repeat;
-// }
 
-// .about_heading {
-//   text-align: center;
-//   padding-top: 10%;
-
-//   & .about_heading_title {
-//     font-size: 48px;
-//   }
-// }
-
-$White: white;
-$Black: rgb(51, 51, 51);
-$FormColor: rgb(211, 196, 150);
-$red: rgb(222, 52, 0);
+@import 'variable';
 
 .top {
   background-image: image-url("main_castle.jpeg");
@@ -34,19 +14,30 @@ $red: rgb(222, 52, 0);
     height: 10vh;
 
     &_logo {
-      margin: 5% 0;
-      height: 90%;
+      height: 100%;
     }
-  }
 
-  &_header_nav_ul {
-    display: flex;
-    margin-top: 34px;
-    list-style: none;
-  }
+    &_nav {
+      ul {
+        padding-top: 10%;
+        display: flex;
+        list-style: none;
+      }
 
-  &_header_nav_li {
-    margin-left: 36px;
+      li {
+        margin-left: 36px;
+      }
+
+      .link {
+        color: white;
+        font-weight: bold;
+
+        &:hover {
+          margin-bottom: 1px;
+          border-bottom: 2px solid white;
+        }
+      }
+    }
   }
 
   &_heading {
@@ -59,7 +50,7 @@ $red: rgb(222, 52, 0);
     h2 {
       color: white;
       font-size: 48px;
-      font-family: 'Noto Serif JP', serif;;
+      font-family: $titleColor;
     }
   }
 }
