@@ -1,18 +1,18 @@
 <div class="top">
   <div class="top_header wrapper">
     <%= link_to root_path do %>
-      <%= image_tag 'logo.png', class: "top_header_logo" %>
+      <%= image_tag 'logo2.png', class: "top_header_logo" %>
     <% end %>
     <nav class="top_header_nav">
-      <ul class="top_header_nav_ul">
-        <li class="top_header_nav_li">
-          <%= link_to "新規登録", new_user_registration_path, class:"link" %>
+      <ul>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path, class: "link" %>
         </li>
-        <li class="top_header_nav_li">
-          <%= link_to "ログイン", new_user_session_path, class:"link" %>
+        <li>
+          <%= link_to "ログイン", new_user_session_path, class: "link" %>
         </li>
-        <li class="top_header_nav_li">
-          <%= link_to "お問い合わせ", new_inquiry_path, class:"link" %>
+        <li>
+          <%= link_to "お問い合わせ", new_inquiry_path, class: "link" %>
         </li>
       </ul>
     </nav>
