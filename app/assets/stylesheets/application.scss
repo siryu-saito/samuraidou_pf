@@ -13,10 +13,7 @@
  *= require_tree .
  *= require_self
  */
-$White: white;
-$Black: #333333;
-$boderColor: #d3c496;
-$red: rgb(135, 25, 0);
+@import 'variable';
 
 * {
   margin: 0;
@@ -34,15 +31,13 @@ $red: rgb(135, 25, 0);
 
 .link {
   color: black;
+  font-family: $titleColor;
 
   &:hover {
     cursor: pointer;
   }
 }
 
-.field {
-  padding-top: 5px;
-}
 
 .text_field {
   padding: 5px;
@@ -80,18 +75,10 @@ $red: rgb(135, 25, 0);
   }
 }
 
-.form {
-  min-height: 80vh;
-
-  &_post {
-    padding-top: 1%;
-    padding-left: 10%;
-  }
-}
-
 .title {
-  margin-top: 2vh;
+  margin: 10px 0;
   text-align: center;
+  font-family: $titleColor;
   border-bottom: 1px solid $boderColor;
 }
 
@@ -187,6 +174,10 @@ $red: rgb(135, 25, 0);
       font-weight: bold;
     }
   }
+}
+
+.form {
+  height: 80vh;
 }
 
 .pagination {
