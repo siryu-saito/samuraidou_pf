@@ -2,33 +2,30 @@
   <div class="postShow_summary">
     <h1 class="title">投稿詳細</h1>
     <div class="postShow_summary_show">
-      <div class="star-group">
-        <div class="detail-review">--- 評価 ---</div>
-        <div class="detail-value", id="star-comf-<%= @post.id %>"></div>
-        <div class="eval-star"><%= @post.rate %>/5点</div>
-      </div>
-      <div class="postShow_summary_show_user">
-        <p>--- 投稿者 ---</p>
-        <a href="/users/<%= @post.user.id %>"><%= @post.user.user_name %></a>
-      </div>
-      <div class="postShow_summary_show_title">
-        <p>--- タイトル ---</p>
-        <%= @post.title %>
-      </div>
-      <div class="postShow_summary_show_text">
-        <p>--- 感想 ---</p>
-        <%= @post.text %>
-      </div>
-      <div class="postShow_summary_show_address">
-        <p>--- 場所 ---</p>
-        <%= @post.address %>
-      </div>
+      <ul>
+        <li>--- 評価 ---</li>
+        <li id="star-comf-<%= @post.id %>"></li>
+        <li><%= @post.rate %>/5点</li>
+      </ul>
+      <ul>
+        <li>--- 投稿者 ---</li>
+        <li><a href="/users/<%= @post.user.id %>"><%= @post.user.user_name %></a></li>
+      </ul>
+      <ul>
+        <li>--- タイトル ---</li>
+        <li><%= @post.title %></li>
+      </ul>
+      <ul>
+        <li>--- 感想 ---</li>
+        <li><%= @post.text %></li>
+      </ul>
+      <ul>
+        <li>--- 場所 ---</li>
+        <li><%= @post.address %></li>
+      </ul>
       <div id="post_<%= @post.id %>">
         <%= render 'post', post: @post %>
       </div>
-      <% if @post.user == current_user %>
-        <%= link_to "編集", edit_post_path %>
-      <% end %>
       <div class="postShow_summary_show_images">
         <% if @post.post_images.present? %>
           <% @post.post_images.each do |image| %>
@@ -39,6 +36,9 @@
         <% end %>
       </div>
     </div>
+    <% if @post.user == current_user %>
+      <%= link_to "編集", edit_post_path, class: "edit_link" %>
+    <% end %>
   </div>
   <div class="postShow_side">
     <div class="postShow_side_box">
@@ -46,22 +46,20 @@
       <div id="map"></div>
     </div>
     <h1 class="title">コメント一覧</h1>
-    <div class="postShow_side_userComment">
+    <div class="postShow_side_comment">
       <%= form_with(model:[@post, @comment], method: :post) do |f| %>
-        <%= f.text_area :comment_content, class: "comment_area", placeholder:'コメント(30文字以内)' %>
+        <%= f.text_area :comment_content, class: "commentArea", placeholder:'コメント(30文字以内)' %>
         <%= f.hidden_field :post_id, value: @post.id %>
         <%= f.submit "コメント", class: "commentButton" %>
       <% end %>
     </div>
     <div class="postShow_side_indexComment">
-      <div class="postShow_side_indexComment_slide">
-        <% @comments.each do |f| %>
-          <div class="postShow_side_indexComment_slide_comment">
-            <a href="/users/<%= f.user.id %>"><%= f.user.user_name %></a>
-            <%= f.comment_content %>
-          </div>
-        <% end %>
-      </div>
+      <% @comments.each do |f| %>
+        <div class="userComment">
+          <a href="/users/<%= f.user.id %>"><%= f.user.user_name %></a>
+          <%= f.comment_content %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
