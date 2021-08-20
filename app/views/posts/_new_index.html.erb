@@ -1,0 +1,19 @@
+<div class="newPost_index_box" id="pagenate">
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post) do %>
+      <div class="newPost_index_box_item">
+        <% if post.post_images.present? %>
+          <% post.post_images.first(1).each do |image| %>
+            <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+          <% end %>
+        <% else %>
+          <%= image_tag 'no_image.jpg', width: '70%', height: '70%' %>
+        <% end %>
+        <p class="link"><%= post.title %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<%= paginate @posts, remote: true %>
+<!-- 新規投稿時 画面移動先 -->
+<p id="saikabu"></p>
