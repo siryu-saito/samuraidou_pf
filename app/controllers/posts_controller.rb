@@ -5,6 +5,14 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.post_images.build
     @posts = Post.page(params[:page]).per(8).order(created_at: :desc)
+
+    # 投稿一覧画面の非同期化
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render :json => @posts}
+      format.xml  { render :xml => @posts}
+    end
   end
 
   def create
