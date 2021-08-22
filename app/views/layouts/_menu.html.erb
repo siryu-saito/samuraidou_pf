@@ -1,31 +1,45 @@
-<div id="nav_manu" class="nav_side_menu">
+<div id="nav_menu" class="side_menu">
   <h2 class="title">メニュー</h2>
   <% if user_signed_in? %>
-  <h4 class="nav_side_menu_user">ユーザー：<%= current_user.user_name %></h4>
-    <ul class="nav_side_menu_ul">
-      <li class="nav_side_menu_li">
-        <%= link_to "新規投稿", new_post_path, class:"link" %>
+  <h4>ユーザー：<%= current_user.user_name %></h4>
+    <ul>
+      <li>
+        <%= link_to new_post_path do %>
+          <p>新規登録</p>
+        <% end %>
       </li>
-      <li class="nav_side_menu_li">
-        <%= link_to "マイページ", user_path(current_user.id), class:"link" %>
+      <li>
+        <%= link_to user_path(current_user.id) do %>
+          <p>マイページ</p>
+        <% end %>
       </li>
-      <li class="nav_side_menu_li">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"link" %>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <p>ログアウト</p>
+        <% end %>
       </li>
-      <li class="nav_side_menu_li">
-        <%= link_to "お問い合わせ", new_inquiry_path, class:"link" %>
+      <li>
+        <%= link_to new_inquiry_path do %>
+          <p>お問い合わせ</p>
+        <% end %>
       </li>
     </ul>
   <% else %>
-    <ul class="nav_side_menu_ul">
-      <li class="nav_side_menu_li">
-        <%= link_to "新規登録", new_user_registration_path, class:"link" %>
+    <ul>
+      <li>
+        <%= link_to new_user_registration_path do %>
+          <p>新規登録</p>
+        <% end %>
       </li>
-      <li class="nav_side_menu_li">
-        <%= link_to "ログイン", new_user_session_path, class:"link" %>
+      <li>
+        <%= link_to new_user_session_path do %>
+          <p>ログイン</p>
+        <% end %>
       </li>
-      <li class="nav_side_menu_li">
-        <%= link_to "お問い合わせ", new_inquiry_path, class:"link" %>
+      <li>
+        <%= link_to new_inquiry_path do %>
+          <p>お問い合わせ</p>
+        <% end %>
       </li>
     </ul>
   <% end %>
