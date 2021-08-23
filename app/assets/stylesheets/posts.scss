@@ -1,5 +1,147 @@
 @import 'variable';
 
+.newPost {
+  &_main {
+    position: relative;
+    min-height: 80vh;
+    background-image: image-url("newPost.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  &_form {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+    h1 {
+      color: white;
+    }
+
+    .field {
+      margin-bottom: 10px;
+      color: white;
+    }
+  }
+
+  &_index {
+    .keyword_form {
+      text-align: right;
+    }
+
+    .keyword_button {
+      padding: 5px 10px;
+      color: #FFF;
+      text-align: center;
+      border-radius: 4px;
+      background-color: $buttonRed;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+      -webkit-tap-highlight-color: transparent;
+      transition: .3s ease-out;
+
+      &:hover {
+        cursor: pointer;
+    	  text-decoration: none;
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12), 0 3px 20px 0 rgba(0,0,0,0.12), 0 5px 6px -2px rgba(0,0,0,0.2);
+      }
+    }
+
+    &_box {
+      margin-top: 10px;
+      display: grid;
+      gap: 26px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      text-align: center;
+
+      .box_items {
+        p {
+          position: relative;
+          color: #333;
+        }
+
+        &:hover {
+          border: 1px solid #dee2e6;
+          background-color: white;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .pagination {
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+}
+
+.postShow {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+
+  &_summary {
+    width: 58%;
+    position: relative;
+
+    .link {
+      position: absolute;
+      top: 30px;
+      right: 0;
+    }
+
+    &_show {
+      text-align: center;
+    }
+  }
+
+  &_side {
+    width: 38%;
+
+    &_comment {
+      position: relative;
+
+      .comment_area {
+        width: 75%;
+        height: 30px;
+        border: 1px solid #dee2e6;
+        resize: none;
+      }
+
+      .comment_button {
+        width: 20%;
+        height: 30px;
+        color: white;
+        background-color: $buttonRed;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+        -webkit-tap-highlight-color: transparent;
+        transition: .3s ease-out;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12), 0 3px 20px 0 rgba(0,0,0,0.12), 0 5px 6px -2px rgba(0,0,0,0.2);
+        }
+      }
+    }
+
+    &_indexComment {
+      height: 250px;
+      border: 1px solid #dee2e6;
+      overflow-y: scroll;
+
+      .userComment {
+        border-bottom: 1px solid #dee2e6;
+      }
+    }
+  }
+}
+
 #map {
   margin-top: 1%;
   height: 170px;

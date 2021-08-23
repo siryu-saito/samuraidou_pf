@@ -41,7 +41,6 @@
   p {
     position: relative;
     color: #333;
-    text-decoration: none;
 
     &::before {
       content: '';
@@ -64,7 +63,7 @@
 .text_field {
   width: 200px;
   height: 30px;
-  border: 2px solid #333;
+  border: 1px solid #333;
   border-radius: 5px;
   background-color: white;
   opacity: 0.7;
@@ -74,14 +73,13 @@
   resize: none;
   width: 300px;
   height: 100px;
-  border: 2px solid #333;
+  border: 1px solid #333;
   border-radius: 5px;
   background-color: white;
   opacity: 0.7;
 }
 
 .button {
-  display: inline-block;
   background-color: $buttonRed;
   color: #FFF;
   width: 160px;
