@@ -29,6 +29,14 @@
   margin: 0 auto;
 }
 
+.form {
+  height: 80vh;
+
+  .field {
+    margin-bottom: 10px;
+  }
+}
+
 .link {
   p {
     position: relative;
