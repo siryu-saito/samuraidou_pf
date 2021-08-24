@@ -1,19 +1,15 @@
 <div class="header">
   <div class="header_nav wrapper">
     <% if user_signed_in? %>
-      <%= link_to new_post_path do %>
-        <h1 class="header_logo">
-          <%= image_tag 'logo.png', class: "header_logo_image" %>
-        </h1>
+      <%= link_to new_post_path do  %>
+        <%= image_tag 'logo.png', class: "logo" %>
       <% end %>
       <div class="hamburger" id="open_nav">
         <%= image_tag 'hamburger.png', class: "hamburder_icon" %>
       </div>
     <% else %>
       <%= link_to root_path do %>
-        <h1 class="header_logo">
-          <%= image_tag 'logo.png', class: "header_logo_image" %>
-        </h1>
+        <%= image_tag 'logo.png', class: "logo" %>
       <% end %>
       <div class="hamburger" id="open_nav">
         <%= image_tag 'hamburger.png', class: "hamburder_icon" %>

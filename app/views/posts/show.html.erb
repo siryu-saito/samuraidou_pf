@@ -1,11 +1,13 @@
 <div class="postShow wrapper">
   <div class="postShow_summary">
     <h1 class="title">投稿詳細</h1>
+    <% if @post.user == current_user %>
+      <%= link_to "編集", edit_post_path, class: "link" %>
+    <% end %>
     <div class="postShow_summary_show">
       <ul>
         <li>--- 評価 ---</li>
         <li id="star-comf-<%= @post.id %>"></li>
-        <li><%= @post.rate %>/5点</li>
       </ul>
       <ul>
         <li>--- 投稿者 ---</li>
@@ -23,8 +25,8 @@
         <li>--- 場所 ---</li>
         <li><%= @post.address %></li>
       </ul>
-      <div id="post_<%= @post.id %>">
-        <%= render 'post', post: @post %>
+      <div id="post_<%= @post.id %>" class="post_raty">
+        いいね：<%= render 'post', post: @post %>
       </div>
       <div class="postShow_summary_show_images">
         <% if @post.post_images.present? %>
@@ -36,9 +38,6 @@
         <% end %>
       </div>
     </div>
-    <% if @post.user == current_user %>
-      <%= link_to "編集", edit_post_path, class: "edit_link" %>
-    <% end %>
   </div>
   <div class="postShow_side">
     <div class="postShow_side_box">
@@ -48,9 +47,9 @@
     <h1 class="title">コメント一覧</h1>
     <div class="postShow_side_comment">
       <%= form_with(model:[@post, @comment], method: :post) do |f| %>
-        <%= f.text_area :comment_content, class: "commentArea", placeholder:'コメント(30文字以内)' %>
+        <%= f.text_area :comment_content, class: "comment_area", placeholder:'コメント(30文字以内)' %>
         <%= f.hidden_field :post_id, value: @post.id %>
-        <%= f.submit "コメント", class: "commentButton" %>
+        <%= f.submit "コメント", class: "comment_button" %>
       <% end %>
     </div>
     <div class="postShow_side_indexComment">
