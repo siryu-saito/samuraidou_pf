@@ -34,8 +34,8 @@
   <div class="newPost_index wrapper">
     <h1 class="title">新規投稿一覧</h1>
     <%= form_with url: search_path, method: :get, class: "keyword_form", local: true do |f| %>
-      <%= f.text_field :keyword, class: "text_field", value: @keyword %>
-      <%= f.submit :"検索" %>
+      <%= f.text_field :keyword, placeholder:'例：松本城', value: @keyword, class: "text_field" %>
+      <%= f.submit :"検索", class: "keyword_button" %>
     <% end %>
     <div id="pagenate">
       <%= render 'new_index' %>
