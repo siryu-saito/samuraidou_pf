@@ -7,7 +7,7 @@
             <%= attachment_image_tag image, :image, :fill, 300, 300 %>
           <% end %>
         <% else %>
-          <%= image_tag 'no_image.jpg' %>
+          <%= image_tag 'no_image.jpg', :width => '300', :height => '300' %>
         <% end %>
         <p><%= post.title %></p>
       </div>
