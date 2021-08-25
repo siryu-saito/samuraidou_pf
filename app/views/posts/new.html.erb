@@ -5,6 +5,11 @@
         <%= flash[:flash] %>
       </p>
     <% end %>
+    <% if flash[:notice] %>
+      <p id="flash">
+        <%= flash[:notice] %>
+      </p>
+    <% end %>
     <div class="newPost_form">
       <h1>新規投稿</h1>
       <%= form_with model:@post, url: posts_path, local:true do |f|%>
