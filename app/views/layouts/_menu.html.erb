@@ -41,6 +41,11 @@
           <p>お問い合わせ</p>
         <% end %>
       </li>
+      <li>
+        <%= link_to users_guest_sign_in_path, method: :post, class: "link" do %>
+          <p>ゲストログイン</p>
+        <% end %>
+      </li>
     </ul>
   <% end %>
 </div>

@@ -12,6 +12,12 @@ class User < ApplicationRecord
     likes.where(post_id: post_id).exists?
   end
 
+  def self.guest
+    find_or_create_by!(email: 'guest@guest.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
 
   enum prefectures:{
     "---":0,
