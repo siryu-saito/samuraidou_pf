@@ -182,9 +182,9 @@
 }
 
 // エラーメッセージ
-#flash, .alert {
-  color:#262626;
-  background:#FFEBE8;
+#flash, #notice, .alert {
+  color: #262626;
+  background: #FFEBE8;
   text-align: center;
   border:2px solid #990000;
   padding:12px;

@@ -53,6 +53,11 @@
       <% end %>
     </div>
     <div class="postShow_side_indexComment">
+      <% if flash[:flash] %>
+        <p id="flash">
+          <%= flash[:flash] %>
+        </p>
+      <% end %>
       <% @comments.each do |f| %>
         <div class="userComment">
           <a href="/users/<%= f.user.id %>"><%= f.user.user_name %></a>

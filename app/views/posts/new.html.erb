@@ -4,9 +4,8 @@
       <p id="flash">
         <%= flash[:flash] %>
       </p>
-    <% end %>
-    <% if flash[:notice] %>
-      <p id="flash">
+    <% elsif flash[:notice] %>
+      <p id="notice">
         <%= flash[:notice] %>
       </p>
     <% end %>
