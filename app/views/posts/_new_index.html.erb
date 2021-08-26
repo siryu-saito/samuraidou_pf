@@ -1,4 +1,4 @@
-<div class="newPost_index_box" id="pagenate">
+<div class="newPost_index_box ">
   <% @posts.each do |post| %>
     <%= link_to post_path(post) do %>
       <div class="box_items">
@@ -7,7 +7,7 @@
             <%= attachment_image_tag image, :image, :fill, 300, 300 %>
           <% end %>
         <% else %>
-          <%= image_tag 'no_image.jpg', :width => '300', :height => '300' %>
+          <%= image_tag 'no_image.jpg', width: '300', height: '300' %>
         <% end %>
         <p><%= post.title %></p>
       </div>
