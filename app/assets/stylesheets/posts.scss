@@ -93,7 +93,34 @@
     }
 
     &_show {
+      display: flex;
+      justify-content: space-around;
+      height: 45%;
+
+      .user_information {
+        width: 30%;
+        text-align: center;
+
+        .profile_image {
+          border-radius: 50%;
+          border: 1px solid #dee2e6;
+        }
+      }
+
+      .post_show {
+        width: 60%;
+
+        li:first-child {
+          color: white;
+          background-color: #333;
+        }
+      }
+    }
+
+    &_images {
+      height: 220px;
       text-align: center;
+      overflow-y: scroll;
     }
   }
 
