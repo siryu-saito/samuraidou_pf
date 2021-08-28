@@ -5,38 +5,43 @@
       <%= link_to "編集", edit_post_path, class: "link" %>
     <% end %>
     <div class="postShow_summary_show">
-      <ul>
-        <li>--- 評価 ---</li>
-        <li id="star-comf-<%= @post.id %>"></li>
-      </ul>
-      <ul>
-        <li>--- 投稿者 ---</li>
-        <li><a href="/users/<%= @post.user.id %>"><%= @post.user.user_name %></a></li>
-      </ul>
-      <ul>
-        <li>--- タイトル ---</li>
-        <li><%= @post.title %></li>
-      </ul>
-      <ul>
-        <li>--- 感想 ---</li>
-        <li><%= @post.text %></li>
-      </ul>
-      <ul>
-        <li>--- 場所 ---</li>
-        <li><%= @post.address %></li>
-      </ul>
-      <div id="post_<%= @post.id %>" class="post_raty">
-        いいね：<%= render 'post', post: @post %>
+      <div class="user_information">
+        <%= attachment_image_tag @post.user, :profile_image, :fill, 150, 150, fallback: "no_image.jpg", class: "profile_image" %>
+        <ul>
+          <li>--- 投稿者 ---</li>
+          <li><a href="/users/<%= @post.user.id %>"><%= @post.user.user_name %></a></li>
+        </ul>
+        <div id="post_<%= @post.id %>" class="post_raty">
+          <%= render 'post', post: @post %>
+        </div>
       </div>
-      <div class="postShow_summary_show_images">
-        <% if @post.post_images.present? %>
-          <% @post.post_images.each do |image| %>
-            <%= attachment_image_tag image, :image, :fill, 200, 200 %>
-          <% end %>
-        <% else %>
-          <%= image_tag 'no_image.jpg', size: '200×200' %>
+      <div class="post_show">
+        <ul>
+          <li>--- 評価 ---</li>
+          <li id="star-comf-<%= @post.id %>"></li>
+        </ul>
+        <ul>
+          <li>--- タイトル ---</li>
+          <li><%= @post.title %></li>
+        </ul>
+        <ul>
+          <li>--- 場所 ---</li>
+          <li><%= @post.address %></li>
+        </ul>
+        <ul>
+          <li>--- 感想 ---</li>
+          <li><%= @post.text %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="postShow_summary_images">
+      <% if @post.post_images.present? %>
+        <% @post.post_images.each do |image| %>
+          <%= attachment_image_tag image, :image, :fill, 210, 210 %>
         <% end %>
-      </div>
+      <% else %>
+        <%= image_tag 'no_image.jpg', size: '210x210' %>
+      <% end %>
     </div>
   </div>
   <div class="postShow_side">
