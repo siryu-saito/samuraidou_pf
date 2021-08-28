@@ -12,8 +12,14 @@
     &_show {
       text-align: center;
 
-      ul {
-        margin-bottom: 10px;
+      .profile_image {
+        border-radius: 50%;
+        border: 1px solid #dee2e6;
+      }
+
+      li:first-child {
+        color: white;
+        background-color: #333;
       }
 
       .link {

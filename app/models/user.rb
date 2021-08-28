@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes
   has_many :comments
+  attachment :profile_image
 
   def liked_by?(post_id)
     likes.where(post_id: post_id).exists?
@@ -15,6 +16,11 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by!(email: 'guest@guest.com') do |user|
       user.password = SecureRandom.urlsafe_base64
+      user.user_name = "ゲスト"
+      user.last_name = "ゲスト"
+      user.first_name = "ユーザー"
+      user.last_name_kana = "ゲスト"
+      user.first_name_kana = "ユーザー"
     end
   end
 

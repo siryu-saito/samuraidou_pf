@@ -3,21 +3,25 @@
   <div class="form_post">
     <%= form_with model:@user, url: user_path, local:true do |f|%>
       <div class="field">
-        <%= f.label :"ユーザー名" %><br />
+        <%= f.label :"ユーザー名" %><br/>
         <%= f.text_field :user_name, autofocus: true, class: "text_field" %>
         <p>※ユーザー名は他のユーザーも確認する事が出来ます</p>
       </div>
       <div class="field">
-        <%= f.label :"姓" %> / <%= f.label :"名" %><br />
+        <%= f.label :"姓" %> / <%= f.label :"名" %><br/>
         <%= f.text_field :last_name, autofocus: true, class: "text_field" %> <%= f.text_field :first_name, autofocus:true, class: "text_field" %>
       </div>
       <div class="field">
-        <%= f.label :"セイ" %> / <%= f.label :"メイ" %><br />
+        <%= f.label :"セイ" %> / <%= f.label :"メイ" %><br/>
         <%= f.text_field :last_name_kana, autofocus: true, class: "text_field" %> <%= f.text_field :first_name_kana, autofocus:true, class: "text_field" %>
       </div>
       <div class="field">
-        <%= f.label :"住所" %><br />
+        <%= f.label :"住所" %><br/>
         <%= f.select :prefectures, User.prefectures.keys, {}, class: "text_field" %>
+      </div>
+      <div class="field">
+        <%= f.label :"プロフィール画像" %><br/>
+        <%= f.attachment_field :profile_image, placeholder: "プロフィールを変更" %>
       </div>
       <%= f.submit '訂正', class: "button" %>
     <% end %>
