@@ -61,3 +61,19 @@
     right: 0;
   }
 }
+
+// モバイル版
+@media (max-width: 600px) {
+  .userShow {
+    height: auto;
+    display: block;
+
+    &_myPage {
+      width: 100%;
+    }
+
+    &_myPost {
+      width: 100%;
+    }
+  }
+}
