@@ -3,30 +3,9 @@
     <%= link_to root_path do %>
       <%= image_tag 'logo.png', class: "logo" %>
     <% end %>
-    <nav class="top_header_nav">
-      <ul>
-        <li>
-          <%= link_to new_user_registration_path, class: "link" do %>
-            <p>新規登録</p>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to new_user_session_path, class: "link" do %>
-            <p>ログイン</p>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to new_inquiry_path, class: "link" do %>
-            <p>お問い合わせ</p>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to users_guest_sign_in_path, method: :post, class: "link" do %>
-            <p>ゲストログイン</p>
-          <% end %>
-        </li>
-      </ul>
-    </nav>
+    <div class="hamburger" id="open_nav">
+      <%= image_tag 'hamburger.png', class: "hamburder_icon" %>
+    </div>
   </div>
   <div class="top_heading">
     <h2>
