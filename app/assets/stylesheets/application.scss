@@ -113,10 +113,12 @@
     justify-content: space-between;
 
     .logo {
+      padding-left: 10px;
       height: 10vh;
     }
 
     .hamburger {
+      padding-right: 10px;
       position: absolute;
       top: 10%;
       right: 0;
