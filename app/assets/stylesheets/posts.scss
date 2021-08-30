@@ -174,3 +174,32 @@
   height: 170px;
   width: 100%;
 }
+
+// モバイル版
+@media (max-width: 600px) {
+  .postShow {
+    height: auto;
+    display: block;
+
+    &_summary {
+      width: 100%;
+
+      &_show {
+        display: block;
+
+        .user_information {
+          width: 100%;
+        }
+
+        .post_show {
+          width: 100%;
+        }
+      }
+    }
+
+    &_side {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
