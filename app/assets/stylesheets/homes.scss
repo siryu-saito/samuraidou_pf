@@ -10,22 +10,11 @@
   &_header {
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    height: 10vh;
+    padding-top: 10px;
 
     .logo {
-      height: 100%;
-    }
-
-    &_nav {
-      ul {
-        display: flex;
-        padding-top: 40px;
-        list-style: none;
-      }
-
-      li {
-        margin-left: 36px;
-      }
+      height: 10vh;
     }
   }
 
@@ -36,6 +25,23 @@
       position: absolute;
       top: 40%;
       left: 10%;
+    }
+  }
+}
+
+// モバイル版
+@media (max-width: 600px) {
+  .top {
+    background-position: right 35% bottom 45%;
+
+    &_header {
+      padding: 10px;
+    }
+
+    &_heading {
+      h2 {
+        font-size: 32px;
+      }
     }
   }
 }

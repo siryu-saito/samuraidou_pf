@@ -190,3 +190,16 @@
   padding:12px;
   font-weight:850;
 }
+
+// モバイル版
+@media (max-width: 600px) {
+  #nav_menu {
+    width: 75vw;
+    position: fixed;
+    right: -75vw;
+    top: 0;
+  }
+  .show {
+    transform: translate3d(-75vw, 0, 0);
+  }
+}
