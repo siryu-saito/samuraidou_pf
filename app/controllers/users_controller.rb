@@ -24,7 +24,7 @@ class UsersController < ApplicationController
                                 :prefectures, :profile_image)
   end
 
-
+  # ログインユーザーと投稿者のidが一致していないと編集できない
   def ensure_correct_user
     @user = User.find(params[:id])
     unless @user == current_user

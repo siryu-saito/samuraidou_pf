@@ -9,10 +9,12 @@ class User < ApplicationRecord
   has_many :comments
   attachment :profile_image
 
+  # ユーザーIDが存在しているか確認
   def liked_by?(post_id)
     likes.where(post_id: post_id).exists?
   end
 
+  # ゲストユーザーログイン機能
   def self.guest
     find_or_create_by!(email: 'guest@guest.com') do |user|
       user.password = SecureRandom.urlsafe_base64
