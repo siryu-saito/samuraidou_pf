@@ -73,9 +73,7 @@
   </div>
 </div>
 
-
-
-
+<!--Google map api-->
 <script type="text/javascript">
   function initMap() {
     var test ={lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
@@ -107,15 +105,16 @@
               src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
 </script>
 
+<!--5段階評価の表示-->
 <script>
 $('#star-comf-<%= @post.id %>').empty();
-$('#star-comf-<%= @post.id %>').raty({      //.idでどの評価であるかを取得
+$('#star-comf-<%= @post.id %>').raty({
   size: 38,
   starOff:  '<%= asset_path('star-off.png') %>',
   starOn : '<%= asset_path('star-on.png') %>',
   starHalf: '<%= asset_path('star-half.png') %>',
   half: true,
-  readOnly: true,                             //readOnlyオプションで読み込み専用とする。編集できない。
-  score: <%= @post.rate %>,              //scoreオプションで評価内容を取得
+  readOnly: true,
+  score: <%= @post.rate %>,
 });
 </script>

@@ -61,6 +61,7 @@ class PostsController < ApplicationController
                                  :rate, post_images_images: [])
   end
 
+  # ログインユーザーと投稿者のidが一致していないと編集
   def ensure_correct_user
     @post = Post.find(params[:id])
     unless @post.user == current_user
