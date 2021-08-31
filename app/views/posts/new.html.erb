@@ -1,5 +1,6 @@
 <div class="newPost">
   <div class="newPost_main">
+    <!--エラーメッセージ-->
     <% if flash[:flash] %>
       <p id="flash">
         <%= flash[:flash] %>
@@ -47,6 +48,7 @@
   </div>
 </div>
 
+<!--5段階評価の入力-->
 <script>
   $('#star').empty();
   $('#star').raty({
