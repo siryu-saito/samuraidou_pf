@@ -113,10 +113,12 @@
     justify-content: space-between;
 
     .logo {
+      padding-left: 10px;
       height: 10vh;
     }
 
     .hamburger {
+      padding-right: 10px;
       position: absolute;
       top: 10%;
       right: 0;
@@ -189,4 +191,17 @@
   border:2px solid #990000;
   padding:12px;
   font-weight:850;
+}
+
+// モバイル版
+@media (max-width: 600px) {
+  #nav_menu {
+    width: 75vw;
+    position: fixed;
+    right: -75vw;
+    top: 0;
+  }
+  .show {
+    transform: translate3d(-75vw, 0, 0);
+  }
 }

@@ -1,5 +1,6 @@
 <div class="newPost">
   <div class="newPost_main">
+    <!--エラーメッセージ-->
     <% if flash[:flash] %>
       <p id="flash">
         <%= flash[:flash] %>
@@ -36,7 +37,7 @@
     </div>
   </div>
   <div class="newPost_index wrapper">
-    <h1 class="title">新規投稿一覧</h1>
+    <h1 class="title" id="saikabu">新規投稿一覧</h1>
     <%= form_with url: search_path, method: :get, class: "keyword_form", local: true do |f| %>
       <%= f.text_field :keyword, placeholder:'例：松本城', value: @keyword, class: "text_field" %>
       <%= f.submit :"検索", class: "keyword_button" %>
@@ -47,6 +48,7 @@
   </div>
 </div>
 
+<!--5段階評価の入力-->
 <script>
   $('#star').empty();
   $('#star').raty({

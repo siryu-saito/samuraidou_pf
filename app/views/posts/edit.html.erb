@@ -19,7 +19,6 @@
         <%= f.attachment_field :post_images_images, multiple: true %>
       </div>
       <%= f.submit '訂正', class: "button" %>
-
     <% end %>
     <%= link_to "詳細", post_path %>
     <%= link_to "削除", post_path, method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } %>

@@ -1,4 +1,4 @@
-<div class="newPost_index_box ">
+<div class="newPost_index_box">
   <% @posts.each do |post| %>
     <%= link_to post_path(post) do %>
       <div class="box_items">
@@ -15,5 +15,3 @@
   <% end %>
 </div>
 <%= paginate @posts, remote: true %>
-<!-- 新規投稿時 画面移動先 -->
-<p id="saikabu"></p>

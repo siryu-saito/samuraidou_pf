@@ -9,10 +9,12 @@ class User < ApplicationRecord
   has_many :comments
   attachment :profile_image
 
+  # ユーザーIDが存在しているか確認
   def liked_by?(post_id)
     likes.where(post_id: post_id).exists?
   end
 
+  # ゲストユーザーログイン機能
   def self.guest
     find_or_create_by!(email: 'guest@guest.com') do |user|
       user.password = SecureRandom.urlsafe_base64
@@ -37,4 +39,5 @@ class User < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,
     沖縄県:47
   }
+  
 end
