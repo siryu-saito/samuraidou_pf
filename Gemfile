@@ -66,8 +66,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用（サイズ調整など）gem
 gem "refile-mini_magick"
-# S3へアクセスする
-gem 'refile-s3', github: 'refile/refile-s3', ref: '768d60d4e5e5e6a00a874767018ff8e31b1da3cd'
 
 # ユーザー認証機能 gem
 gem 'devise'
@@ -75,13 +73,18 @@ gem 'devise'
 # jquery導入gem
 gem 'jquery-rails'
 
+# 住所から緯度経度を取得
 gem 'geocoder'
 
+# ページネーションの機能を実装
 gem 'kaminari','~> 1.2.1'
 
+# Railsの多言語化対応
 gem 'rails-i18n'
 
+# 環境変数を管理
 gem 'dotenv-rails'
+
 group :production do
   gem 'mysql2'
 end
