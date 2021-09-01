@@ -73,6 +73,7 @@ gem 'devise'
 # jquery導入gem
 gem 'jquery-rails'
 
+# 住所から緯度経度を取得
 gem 'geocoder'
 
 gem 'kaminari','~> 1.2.1'
