@@ -50,7 +50,7 @@
     }
 
     &_box {
-      height: 80vh;
+      height: auto;
       margin: 10px 0 70px;
       display: grid;
       gap: 26px;
@@ -58,11 +58,34 @@
       text-align: center;
 
       .box_items {
-        p {
-          position: relative;
-          color: #333;
-        }
+        color: #333;
 
+        &_information {
+          padding-left: 10px;
+          text-align: left;
+
+          .post_title {
+            font-weight: 900;
+          }
+
+          .created_at {
+            font-size: 13px;
+          }
+
+          &_user {
+            display: flex;
+            align-items: flex-end;
+
+            .profile_image {
+              border-radius: 50%;
+              border: 1px solid #dee2e6;
+            }
+
+            .user_name {
+              padding: 0 0 10px 10px;
+            }
+          }
+        }
         &:hover {
           border: 1px solid #dee2e6;
           background-color: white;
