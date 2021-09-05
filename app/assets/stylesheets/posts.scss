@@ -1,5 +1,6 @@
 @import 'variable';
 
+// 新規投稿・一覧画面
 .newPost {
   &_main {
     position: relative;
@@ -60,8 +61,13 @@
       .box_items {
         color: #333;
 
+        .image {
+          height: 250px;
+          width: 250px;
+        }
+
         &_information {
-          padding-left: 10px;
+          padding-left: 25px;
           text-align: left;
 
           .post_title {
@@ -205,6 +211,17 @@
     &_index {
       &_box {
         height: auto;
+
+        .box_items {
+          .image {
+            height: 300px;
+            width: 300px;
+          }
+
+          &_information {
+            padding-left: 35px;
+          }
+        }
       }
     }
   }
