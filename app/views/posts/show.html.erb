@@ -17,6 +17,10 @@
       </div>
       <div class="post_show">
         <ul>
+          <li>--- 投稿日時 ---</li>
+          <li><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></li>
+        </ul>
+        <ul>
           <li>--- 評価 ---</li>
           <li id="star-comf-<%= @post.id %>"></li>
         </ul>
@@ -37,7 +41,7 @@
     <div class="postShow_summary_images">
       <% if @post.post_images.present? %>
         <% @post.post_images.each do |image| %>
-          <%= attachment_image_tag image, :image, :fill, 210, 210 %>
+          <%= attachment_image_tag image, :image, :fill, 220, 220 %>
         <% end %>
       <% else %>
         <%= image_tag 'no_image.jpg', size: '210x210' %>
@@ -45,7 +49,7 @@
     </div>
   </div>
   <div class="postShow_side">
-    <div class="postShow_side_box">
+    <div class="postShow_side_map">
       <h1 class="title">地図</h1>
       <div id="map"></div>
     </div>
@@ -67,6 +71,7 @@
         <div class="userComment">
           <a href="/users/<%= f.user.id %>"><%= f.user.user_name %></a>
           <%= f.comment_content %>
+          <p class="created_at"><%= f.created_at.strftime('%Y/%m/%d %H:%M') %></p>
         </div>
       <% end %>
     </div>

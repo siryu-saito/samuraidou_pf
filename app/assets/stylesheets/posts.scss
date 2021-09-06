@@ -1,6 +1,6 @@
 @import 'variable';
 
-// 新規投稿・一覧画面
+// 新規投稿・投稿一覧
 .newPost {
   &_main {
     position: relative;
@@ -11,6 +11,7 @@
     background-repeat: no-repeat;
   }
 
+  // 新規投稿フォーム
   &_form {
     width: 300px;
     height: 500px;
@@ -28,6 +29,7 @@
     }
   }
 
+  // 投稿一覧
   &_index {
     .keyword_form {
       text-align: right;
@@ -92,6 +94,7 @@
             }
           }
         }
+        
         &:hover {
           border: 1px solid #dee2e6;
           background-color: white;
@@ -100,20 +103,24 @@
       }
     }
 
+    // ページ割り
     .pagination {
       margin: 10px 0;
+      font-size: 20px;
       text-align: center;
     }
   }
 }
 
+// 投稿詳細・地図・コメント
 .postShow {
   height: 80vh;
   display: flex;
   justify-content: space-around;
 
+  // 投稿詳細
   &_summary {
-    width: 58%;
+    width: 60%;
     position: relative;
 
     .link {
@@ -125,7 +132,7 @@
     &_show {
       display: flex;
       justify-content: space-around;
-      height: 45%;
+      height: 50%;
 
       .user_information {
         width: 30%;
@@ -148,15 +155,25 @@
     }
 
     &_images {
+      width: 100%;
       height: 220px;
       text-align: center;
       overflow-y: scroll;
     }
   }
 
+  // 地図・コメント
   &_side {
-    width: 38%;
+    width: 35%;
 
+    // 地図
+    #map {
+      margin-top: 1%;
+      height: 170px;
+      width: 100%;
+    }
+
+    // コメント
     &_comment {
       position: relative;
 
@@ -187,6 +204,7 @@
       }
     }
 
+    // コメント一覧
     &_indexComment {
       height: 250px;
       border: 1px solid #dee2e6;
@@ -194,15 +212,14 @@
 
       .userComment {
         border-bottom: 1px solid #dee2e6;
+
+        .created_at {
+          font-size: 13px;
+          text-align: right;
+        }
       }
     }
   }
-}
-
-#map {
-  margin-top: 1%;
-  height: 170px;
-  width: 100%;
 }
 
 // モバイル版
@@ -242,6 +259,7 @@
 
         .post_show {
           width: 100%;
+          height: 300px;
         }
       }
     }
