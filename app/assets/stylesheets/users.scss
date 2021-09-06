@@ -1,10 +1,12 @@
 @import 'variable';
 
+// ユーザー詳細
 .userShow {
   height: 80vh;
   display: flex;
   justify-content: space-around;
 
+  // ユーザー情報
   &_myPage {
     width: 28%;
     position: relative;
@@ -30,6 +32,7 @@
     }
   }
 
+  // ユーザー投稿
   &_myPost {
     width: 68%;
     position: relative;
