@@ -1,5 +1,3 @@
-<img width="674" alt="logo" src="https://user-images.githubusercontent.com/81666082/131669193-6e4834e1-3af3-4f83-ab5b-b5171cc94619.png">
-
 ## サイト概要
 戦国時代に建てられた城や城跡・古戦場跡地専用のレビューサイト
 
